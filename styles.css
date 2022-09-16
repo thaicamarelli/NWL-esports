@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* resetando css */
+}
+
+ul {
+    list-style: none; /* tira bolinha da lista */
+}
+
+body {
+    background-image: url(./assets/Fundo.jpg); /* Link da imagem*/
+    background-position: top center; /* imagem começa do topo e centraliza */
+    background-size: 100% auto; /* Aumenta e diminuui a imagem a partir do tamanho 100 da largura e altura automatica */
+    background-repeat: no-repeat; /* nao repete imagem */
+    background-color: #121214;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%; /* espaçamento entre linhas */
+}
+
+header {
+    text-align: center;
+    padding-top: 32px;
+    height: calc(120px + 32px); /* funcao para calcular valores */
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100% );
+
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    transition: transform .3s; /* aplica a transição de 3 segundos, recebe quando é passado o mouse em cima */
+
+    animation: fromTop .7s .2s backwards; /* informa a animacao setada e o tempo que ela vai durar*/
+}
+
+header div:hover {
+    transform: scale(1.1); /* transformar imagem, a escala do elemento aumenta e ele parece pulsar */
+    
+}
+
+header img {
+    width: 100%;
+    border-radius: 50%;
+    
+}
+
+main {
+    max-width: 580px; /* largura maxima de 580 entao o maximo de largura que as tags filhas podem ter é isso */
+    width: 90%; /* se o layout estiver abaixo */
+    margin: 32px auto; /* margem automatica */
+
+    display: flex; /* coloca os itens ao um ao lado do outro */
+    flex-direction: column; /* define se os itens serao colocados em linha ao lado do outro ou em colunas */
+    gap: 23px; /* seta o espaçamento entre linhas ou colunas de um display flex */
+
+}
+
+main section {
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1){
+    animation-delay: 0;
+}
+
+main section:nth-child(2){
+    animation-delay: .3s;
+}
+
+main section:nth-child(3){
+    animation-delay: .6s;
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100% );
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+section h2 {
+    letter-spacing: -0.47px; /* espaçamento entre letras */
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA
+}
+
+section ul {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap; /* quando um item nao couber ao lado do outro devido ao tamanho maximo da caixa ele desce */
+}
+
+section ul li {
+    transition: transform .3s; 
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games-list img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+.channel-list img {
+    width: 70px;
+    border-radius: 50%; /* deixa um circulo */
+    border: 1px solid #443E54;
+}
+
+/* animation */
+
+@keyframes fromTop { /* tipo de animação e nome que aqui e fromTop mas pode ser qualquer nome */
+    from{
+        opacity: 0;
+        transform: translateY(-30px); /* vai mover -30 px ou seja para cima */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); /* sempre começa no 0 porque e a posição atual do elemento */
+    }
+}
+
+@keyframes fromBottom {
+    from{
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
